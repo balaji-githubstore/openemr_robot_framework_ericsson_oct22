@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    This suite file handles test case related to valid 
+Documentation    This suite file handles test cases related to valid 
 ...    credentials connected with OP_SC_02 and OP_TC_02
 
 Library    SeleniumLibrary
