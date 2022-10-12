@@ -4,7 +4,7 @@ Documentation       This suite file handles test cases related to valid
 
 Resource            ../Resource/Base/CommonFunctionality.resource
 
-Library    DataDriver    file=../test_data/openemr_data.xlsx    sheet_name=VerifyValidCredential
+Library    DataDriver    file=../test_data/valid_credential_data.csv    
 
 Test Setup          Launch Browser and Navigate To Openemr
 Test Teardown       Close Browser
