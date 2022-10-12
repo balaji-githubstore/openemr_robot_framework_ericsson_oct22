@@ -4,6 +4,8 @@ Documentation       This suite file handles test cases related to valid
 
 Resource            ../Resource/Base/CommonFunctionality.resource
 
+Library    DataDriver    file=../test_data/openemr_data.xlsx    sheet_name=VerifyValidCredential
+
 Test Setup          Launch Browser and Navigate To Openemr
 Test Teardown       Close Browser
 
@@ -11,8 +13,7 @@ Test Template       Verify Valid Credential Template
 
 
 *** Test Cases ***
-TC1    admin    pass    English (Indian)    OpenEMR
-TC2    physician    physician    English (Indian)    OpenEMR
+Verify Valid Credential Test ${tc_name}
 
 *** Keywords ***
 Verify Valid Credential Template
@@ -22,4 +23,6 @@ Verify Valid Credential Template
     Select From List By Label    name=languageChoice    ${language}
     Click Element    id=login-button
     Title Should Be    ${expected_title}
-
+    
+    
+    
