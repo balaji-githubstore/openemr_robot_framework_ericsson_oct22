@@ -1,190 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221012 15:43:07.459" rpa="false" schemaversion="3">
-<suite id="s1" name="Verify Invalid Credential Suite" source="D:\Mine\Company\Ericsson 5\openemr_framework\login_suite\verify_invalid_credential_suite.robot">
-<test id="s1-t1" name="TC1" line="13">
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221013 16:56:18.765" rpa="false" schemaversion="3">
+<suite id="s1" name="Verify Invalid Credential Suite &amp; Verify Valid Credential Suite &amp; Verify Valid Credential Suite Csv &amp; Verify Add Patient Suite">
+<suite id="s1-s1" name="Verify Invalid Credential Suite" source="D:\Mine\Company\Ericsson 5\openemr_framework\login_suite\verify_invalid_credential_suite.robot">
+<test id="s1-s1-t1" name="TC1" line="14">
 <kw name="Launch Browser and Navigate To Openemr" library="CommonFunctionality" type="SETUP">
 <kw name="Get Driver Path" library="DriverSetup">
 <var>${driver_path}</var>
 <arg>${BROWSER_NAME}</arg>
-<msg timestamp="20221012 15:43:07.805" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20221012 15:43:08.427" level="INFO">Get LATEST edgedriver version for 106.0.1370 Edge</msg>
-<msg timestamp="20221012 15:43:09.209" level="INFO">Driver [C:\Users\Balaji\.wdm\drivers\edgedriver\win64\106.0.1370\msedgedriver.exe] found in cache</msg>
-<msg timestamp="20221012 15:43:09.209" level="INFO">${driver_path} = C:\Users\Balaji\.wdm\drivers\edgedriver\win64\106.0.1370\msedgedriver.exe</msg>
-<status status="PASS" starttime="20221012 15:43:07.804" endtime="20221012 15:43:09.209"/>
+<msg timestamp="20221013 16:56:19.684" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221013 16:56:20.668" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
+<msg timestamp="20221013 16:56:21.747" level="INFO">Driver [C:\Users\Balaji\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221013 16:56:21.748" level="INFO">${driver_path} = C:\Users\Balaji\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
+<status status="PASS" starttime="20221013 16:56:19.683" endtime="20221013 16:56:21.748"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER_NAME}</arg>
 <arg>executable_path=${driver_path}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221012 15:43:09.210" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
-<status status="PASS" starttime="20221012 15:43:09.210" endtime="20221012 15:43:15.920"/>
+<msg timestamp="20221013 16:56:21.750" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221013 16:56:21.748" endtime="20221013 16:56:23.738"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221012 15:43:15.920" endtime="20221012 15:43:16.307"/>
+<status status="PASS" starttime="20221013 16:56:23.738" endtime="20221013 16:56:24.041"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>0s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221012 15:43:16.307" endtime="20221012 15:43:16.310"/>
+<status status="PASS" starttime="20221013 16:56:24.042" endtime="20221013 16:56:24.044"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${EXECDIR}${/}screenshot</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20221012 15:43:16.310" endtime="20221012 15:43:16.311"/>
+<status status="PASS" starttime="20221013 16:56:24.044" endtime="20221013 16:56:24.045"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20221012 15:43:16.312" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
-<status status="PASS" starttime="20221012 15:43:16.312" endtime="20221012 15:43:22.573"/>
-</kw>
-<status status="PASS" starttime="20221012 15:43:07.804" endtime="20221012 15:43:22.573"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>john</arg>
-<arg>john12</arg>
-<arg>English (Indian)</arg>
-<arg>Invalid username or password</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=authUser</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221012 15:43:22.576" level="INFO">Typing text 'john' into text field 'id=authUser'.</msg>
-<msg timestamp="20221012 15:43:23.145" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-5.png"&gt;&lt;img src="screenshot/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221012 15:43:23.146" level="FAIL">Element with locator 'id=authUser' not found.</msg>
-<status status="FAIL" starttime="20221012 15:43:22.575" endtime="20221012 15:43:23.147"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>css=#clearPass</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:23.148" endtime="20221012 15:43:23.148"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=languageChoice</arg>
-<arg>${language}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:23.148" endtime="20221012 15:43:23.148"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:23.148" endtime="20221012 15:43:23.148"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//div[contains(text(),'Invalid')]</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:23.148" endtime="20221012 15:43:23.148"/>
-</kw>
-<status status="FAIL" starttime="20221012 15:43:22.574" endtime="20221012 15:43:23.148"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221012 15:43:23.149" endtime="20221012 15:43:26.478"/>
-</kw>
-<status status="FAIL" starttime="20221012 15:43:07.802" endtime="20221012 15:43:26.509">Element with locator 'id=authUser' not found.</status>
-</test>
-<test id="s1-t2" name="TC2" line="14">
-<kw name="Launch Browser and Navigate To Openemr" library="CommonFunctionality" type="SETUP">
-<kw name="Get Driver Path" library="DriverSetup">
-<var>${driver_path}</var>
-<arg>${BROWSER_NAME}</arg>
-<msg timestamp="20221012 15:43:26.514" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20221012 15:43:27.448" level="INFO">Get LATEST edgedriver version for 106.0.1370 Edge</msg>
-<msg timestamp="20221012 15:43:27.999" level="INFO">Driver [C:\Users\Balaji\.wdm\drivers\edgedriver\win64\106.0.1370\msedgedriver.exe] found in cache</msg>
-<msg timestamp="20221012 15:43:27.999" level="INFO">${driver_path} = C:\Users\Balaji\.wdm\drivers\edgedriver\win64\106.0.1370\msedgedriver.exe</msg>
-<status status="PASS" starttime="20221012 15:43:26.513" endtime="20221012 15:43:27.999"/>
-</kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER_NAME}</arg>
-<arg>executable_path=${driver_path}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221012 15:43:28.002" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
-<status status="PASS" starttime="20221012 15:43:28.000" endtime="20221012 15:43:29.789"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221012 15:43:29.789" endtime="20221012 15:43:29.986"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>0s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221012 15:43:29.987" endtime="20221012 15:43:29.996"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}screenshot</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20221012 15:43:29.997" endtime="20221012 15:43:30.000"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20221012 15:43:30.003" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
-<status status="PASS" starttime="20221012 15:43:30.001" endtime="20221012 15:43:32.177"/>
-</kw>
-<status status="PASS" starttime="20221012 15:43:26.512" endtime="20221012 15:43:32.177"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>peter</arg>
-<arg>peter123</arg>
-<arg>Danish</arg>
-<arg>Invalid username or password</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=authUser</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221012 15:43:32.182" level="INFO">Typing text 'peter' into text field 'id=authUser'.</msg>
-<msg timestamp="20221012 15:43:32.446" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-6.png"&gt;&lt;img src="screenshot/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221012 15:43:32.447" level="FAIL">Element with locator 'id=authUser' not found.</msg>
-<status status="FAIL" starttime="20221012 15:43:32.182" endtime="20221012 15:43:32.447"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>css=#clearPass</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:32.448" endtime="20221012 15:43:32.448"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=languageChoice</arg>
-<arg>${language}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:32.448" endtime="20221012 15:43:32.448"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=login-button</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:32.449" endtime="20221012 15:43:32.449"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//div[contains(text(),'Invalid')]</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="NOT RUN" starttime="20221012 15:43:32.449" endtime="20221012 15:43:32.449"/>
-</kw>
-<status status="FAIL" starttime="20221012 15:43:32.180" endtime="20221012 15:43:32.450"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221012 15:43:32.452" endtime="20221012 15:43:34.738"/>
-</kw>
-<status status="FAIL" starttime="20221012 15:43:26.511" endtime="20221012 15:43:34.739">Element with locator 'id=authUser' not found.</status>
-</test>
-<doc>This suite file handles test cases related to valid
-credentials connected with OP_SC_02 and OP_TC_07</doc>
-<status status="FAIL" starttime="20221012 15:43:07.461" endtime="20221012 15:43:34.750"/>
-</suite>
-<statistics>
-<total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Verify Invalid Credential Suite">Verify Invalid Credential Suite</stat>
-</suite>
-</statistics>
+<msg timestamp="20221013 16:56:24.046" level="INFO">Opening url 'https://demo.openemr.io/b/openemr'</msg>
+<msg timestamp="20221013 16:56:27.845" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000286FF601B40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c287bc9fed8572a57f66611717a106dc/screenshot</msg>
 <errors>
+<msg timestamp="20221013 16:56:27.845" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000286FF601B40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c287bc9fed8572a57f66611717a106dc/screenshot</msg>
+<msg timestamp="20221013 16:56:30.403" level="ERROR">Execution stopped by user.</msg>
 </errors>
 </robot>

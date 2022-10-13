@@ -3,6 +3,9 @@ Documentation       This suite file handles test cases related to valid
 ...                 credentials connected with OP_SC_02 and OP_TC_02
 
 Resource            ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
+Resource    ../Resource/Pages/MainPage.resource
+Resource    ../Resource/Pages/SearchOrAddPatienPage.resource
 
 Library    DataDriver    file=../test_data/openemr_data.xlsx    sheet_name=VerifyValidCredential
 
@@ -11,10 +14,13 @@ Test Teardown       Close Browser
 
 *** Test Cases ***
 Verify Add Patient Test 
-    Input Text    id=authUser    admin
-    Input Password    css=#clearPass    pass
-    Select From List By Label    name=languageChoice    English (Indian)
-    Click Element    id=login-button
+    Enter Username    admin
+    Enter Password    pass
+    Select Language By Label    English (Indian)
+    Click Login
+    Click Patients
+    Click NewSearch
+    Enter FirstName    john
     #check steps in comment section
 
 *** Comments ***
